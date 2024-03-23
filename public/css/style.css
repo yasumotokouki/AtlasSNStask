@@ -1,0 +1,992 @@
+@charset "utf-8";
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFFFFF;
+    height: 100vh
+}
+
+body {}
+
+/* header */
+header {
+    background: #186AC9;
+    max-height: 110px;
+    padding: 20px 40px;
+
+
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+}
+
+#head-right {
+    display: flex;
+    align-items: center;
+}
+
+.error-message {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: #222222;
+}
+
+.error-message li {
+    margin-bottom: 5px;
+}
+
+.error-inner {
+    text-align: left;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+}
+
+.top-logo {
+    max-width: 140px;
+    max-height: 50px;
+
+}
+
+.menu-icon {
+    max-width: 60px;
+}
+
+.flex-box {
+    display: flex;
+}
+
+.username {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+/* main content */
+#row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#container {
+    flex: 0 0 80%;
+}
+
+.container-btn {
+
+    display: block;
+
+    width: 100px;
+
+    height: 100px;
+
+    margin-left: 80%;
+
+
+}
+
+
+#side-bar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex: 0 0 19.9%;
+    border-left: 1px solid #727272;
+    background-color: #FFFFFF;
+    font-size: 18px;
+    color: #222222;
+}
+
+.count {
+    margin-left: 30px;
+}
+
+#confirm {
+
+    padding: 35px 30px;
+    height: 380px;
+
+}
+
+/* 検索ボタン位置 */
+.search-area .blue-btn {
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* 投稿するとき */
+.tweet {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFFFFF;
+    color: black;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #C2C2C2;
+    font-size: 16px;
+    max-width: 1600px;
+    margin: 0 auto;
+
+}
+
+/* 削除系 */
+.post_delete {
+    display: inline-block;
+    width: 50px;
+    height: 32px;
+}
+
+/* アイコンの位置 */
+.form_icon {
+
+    display: inline-block;
+
+    margin-left: 40px;
+
+}
+
+/* 検索ページ */
+.search_form input[type="text"] {
+    width: 300px;
+    padding: 15px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.search_form {
+
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-bottom: 2px solid #727272;
+
+}
+
+.search_keyword {
+    margin-left: 200px;
+    margin-top: 65px;
+    font-size: 24px;
+    /* 文字のサイズを変更 */
+}
+
+
+.search_icon {
+    background: #186AC9;
+    margin-left: 350px;
+    border-radius: 10%;
+    /* 角を丸くする */
+    width: 50px;
+    /* 幅を大きくする */
+    height: 50px;
+    /* 高さを大きくする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* アイコンの色を白に設定 */
+    border: none;
+    margin-top: -50px;
+}
+
+.search_user {
+    margin-left: 350px;
+}
+
+.search_img {
+    margin-top: 10px;
+}
+
+.search_btn {
+    margin-top: 17px;
+    margin-left: 200px;
+}
+
+
+
+/* 検索ぺーじ終了 */
+
+
+
+/* メニュー */
+.nav-item {
+    width: 100%;
+    height: 32%;
+    background-color: #FFFFFF;
+    color: #848484;
+    border-bottom: 2px solid #00297E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.nav-bottom {
+    border-bottom: none;
+}
+
+
+/* テスト */
+
+.accordion-container {
+    position: absolute;
+    left: 150vh;
+    top: 0vh;
+    width: 100%;
+    border-top: none;
+    outline: 0;
+    cursor: pointer
+}
+
+.accordion-container .accordion-title {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0.625em 0.625em 0.625em 2em;
+    font-size: 1.25em;
+    font-weight: normal;
+    color: #fff;
+    background: #186AC9;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.accordion-container .accordion-title:hover,
+.accordion-container .accordion-title:active,
+.accordion-container .content-entry.open .accordion-title {
+    background-color: #186AC9;
+    color: white;
+}
+
+.accordion-container .accordion-title:hover i:before,
+.accordion-container .accordion-title:hover i:active,
+.accordion-container .content-entry.open i {
+    color: white;
+}
+
+.accordion-title {
+    position: relative;
+}
+
+.accordion-title:after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.accordion-title.open:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 45%;
+}
+
+.accordion-content {
+    display: none;
+    position: relative;
+    top: 16px;
+    left: 97px;
+    border: 2px solid #00297E;
+    background-color: #FFFFFF;
+    width: 320px;
+    height: 250px;
+}
+
+.accordion-content :hover {
+    background-color: #00297E;
+    color: #FFFFFF;
+}
+
+.accordion-content a {
+    text-decoration: none;
+}
+
+
+/* CSS for CodePen */
+.accordion-container {
+    width: 300px;
+    margin: 1.875em auto;
+}
+
+
+/* 共用 */
+.blue-btn {
+    background-color: #186AC9;
+    color: #FFFFFF;
+    border-radius: 10px;
+    max-width: 180px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-btn p {
+    font-size: 16px;
+}
+
+.blue-btn a {
+    color: #FFFFFF;
+}
+
+.follower-btn {
+    margin-bottom: 20px;
+
+}
+
+.follower-btn .blue-btn {
+    margin-left: auto;
+}
+
+.follow-btn {
+    margin-bottom: 20px;
+}
+
+.follow-btn .blue-btn {
+    margin-left: auto;
+}
+
+/* follow-list */
+.icon-area {
+
+    border-bottom: 10px solid #E0E0E0;
+    padding: 25px 40px;
+}
+
+.icon-space {
+    margin: 5px;
+}
+
+.follow_user {
+    display: flex;
+    justify-content: center;
+    /* アイコンを中央に寄せる */
+
+}
+
+.follower_user {
+    display: flex;
+    justify-content: center;
+    /* アイコンを中央に寄せる */
+
+}
+
+.title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: #333333;
+    margin-left: 100px;
+    font-weight: 600;
+    margin-top: 20px;
+    /* 5ピクセル下に移動 */
+}
+
+.icon-margin {
+    margin: 0 70px;
+}
+
+/* search */
+.users-list {
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222222;
+    margin-top: 45px;
+}
+
+.users-list a {
+    color: #222222;
+}
+
+
+.search-box {
+    align-items: center;
+
+}
+
+
+.search-username {
+    margin-left: 40px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 350px;
+
+}
+
+.btn-danger {
+    background-color: #ED3833;
+    /* 赤い背景色を設定 */
+    color: #fff;
+    /* テキストの色を白に設定 */
+    border: none;
+    /* ボーダーを削除 */
+    padding: 10px 20px;
+    /* パディングを設定（必要に応じて調整） */
+    border-radius: 5px;
+    /* 角丸にする（必要に応じて調整） */
+    cursor: pointer;
+    /* カーソルをポインターに変更（クリック可能なボタンを示す） */
+}
+
+/* ボタンのホバースタイル（マウスをボタンに重ねたときのスタイル） */
+.btn-danger:hover {
+    background-color: #C62828;
+    /* ホバー時の背景色を変更（必要に応じて調整） */
+}
+
+.btn-primary {
+    background-color: #00BFFF;
+    /* 赤い背景色を設定 */
+    color: #fff;
+    /* テキストの色を白に設定 */
+    border: none;
+    /* ボーダーを削除 */
+    padding: 10px 20px;
+    /* パディングを設定（必要に応じて調整） */
+    border-radius: 5px;
+    /* 角丸にする（必要に応じて調整） */
+    cursor: pointer;
+    /* カーソルをポインターに変更（クリック可能なボタンを示す） */
+}
+
+.btn-primary:hover {
+    background-color: #0000FF;
+    /* ホバー時の背景色を変更（必要に応じて調整） */
+}
+
+.search-space {
+
+    margin-left: 80px;
+    margin-top: 10px;
+    resize: none;
+    outline: none;
+    font-size: 20px;
+    max-width: 79%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+
+}
+
+.search-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    color: black;
+    margin-left: 320px;
+
+}
+
+.search-form {
+
+    border-bottom: 10px solid #E0E0E0;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.search-user button {
+    background-color: #0067C6;
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+    display: block;
+    /* margin-left: 10px; */
+
+}
+
+.search-icon {
+    color: #FFFFFF;
+    font-size: 2.3em;
+
+}
+
+input.search-space {
+
+    width: 430px;
+    height: 55px;
+}
+
+/* profile */
+
+.profile-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color: black;
+    margin-left: 25px;
+}
+
+.profile-name1 {
+    width: 230px;
+    margin-bottom: 20px;
+}
+
+.profile-name2 {
+    width: 230px;
+}
+
+.profile-bio1 {
+    width: 230px;
+    margin-bottom: 20px;
+}
+
+.profile-bio2 {
+    width: 230px;
+}
+
+.profile-header {
+    margin-left: 50px;
+}
+
+.profile-header label {
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.profile-center {
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.profile-form {
+    margin-left: 90px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 20px;
+}
+
+.profile-form input {
+    margin-bottom: 50px;
+    width: 400px;
+    background-color: #EFEFEF;
+    border: 1px solid #707070;
+}
+
+.update-btn {
+    text-align: center;
+
+}
+
+.update-btn .btn {
+    height: 50px;
+    width: 220px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.profile-image {
+    width: 500px;
+    height: 130px;
+    line-height: 120px;
+
+}
+
+/* 投稿編集だよ */
+.modal_post {
+    margin-left: 10px;
+    margin-top: 35px;
+    resize: none;
+    outline: none;
+    font-size: 20px;
+    color: #222222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 150px;
+
+}
+
+.modal {
+
+    display: none;
+
+    height: 100vh;
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+}
+
+
+
+.modal__bg {
+
+    background: rgba(0, 0, 0, 0.15);
+
+    height: 100vh;
+
+    position: absolute;
+
+    width: 100%;
+
+}
+
+
+
+.modal__content {
+
+    background: #fff;
+
+    left: 30%;
+
+    padding: 10px 40px;
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translate(-10%, -40%);
+
+    width: 70%;
+
+    border-radius: 15px;
+
+}
+
+
+
+.modal_post {
+
+    width: 100%;
+
+    padding: 100px 0;
+
+}
+
+
+
+.modal_edit {
+
+    display: block;
+
+    width: 20px;
+
+    height: 0px;
+
+    margin-top: 15px;
+
+    margin-left: 50%;
+
+}
+
+
+/* ここまで！ */
+
+/* プロフィール更新 */
+.form-group {
+    margin-bottom: 1rem;
+    border: 0;
+    text-align: left;
+}
+
+.form-group,
+.input {
+    display: grid;
+}
+
+input.input,
+textarea {
+    text-align: left;
+    background-color: #e5e5e5;
+    border: 1px solid #7a7a7a;
+}
+
+.form-update {
+    margin: 0 auto;
+    /* 中央寄せ */
+    display: table;
+}
+
+/*  */
+
+
+.contents {
+
+    display: flex;
+
+    margin: 10px;
+
+    justify-content: space-between;
+
+}
+
+
+
+
+
+.contents img {
+
+    width: 50px;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+.post_user {
+
+    margin-top: 20px;
+
+    font-size: 20px;
+
+}
+
+
+
+.flex {
+
+    display: flex;
+
+
+
+}
+
+
+
+.user_img {
+
+    margin-left: 40px;
+
+}
+
+
+
+.post_user {
+
+    margin-left: 15px;
+
+}
+
+
+
+.post_date {
+
+    margin: 0 0 0 auto;
+
+}
+
+
+
+.post_text {
+
+    font-size: 20px;
+
+    margin-top: 10px;
+
+    margin-left: 160px;
+
+}
+
+
+
+
+
+
+/* 投稿 */
+.form_text {
+
+
+
+    width: 700px;
+
+    height: 100px;
+
+    border: none;
+
+    margin-top: 30px;
+
+    margin-left: 30px;
+
+
+}
+
+
+/* topページ区切る */
+.post {
+    border-top: 2px solid #ccc;
+    /* 2pxの太線に変更（例） */
+}
+
+.contents .post_text {
+    flex: 1;
+    /* テキストを左端に寄せる */
+}
+
+.contents .content {
+    text-align: right;
+    /* アイコンを右に寄せる */
+}
+
+.contents .content a {
+    margin-left: 0px;
+    /* アイコン間の余白を設定（必要に応じて調整） */
+}
+
+/* その他のプロフィール */
+
+
+
+.user {
+
+    margin-left: 20px;
+
+}
+
+
+
+.user_box {
+
+    margin-left: 30px;
+
+}
+
+
+
+.user_name {
+
+    margin-left: 30px;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+.user_bio {
+
+    margin-left: 30px;
+
+}
+
+
+
+.follow_btn {
+
+    padding-top: 40px;
+
+    margin-left: 650px;
+
+}
+
+
+
+/* その他のプロフィール終了*/
+.follow_btn {
+
+    padding-top: 40px;
+
+    margin-left: 650px;
+
+}
+
+.contact-img {
+    margin-left: 20px;
+}
+
+
+/* ユーザープロフィール更新 */
+.contact-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px;
+
+    margin-left: 300px;
+
+}
+
+
+
+.item {
+
+    width: 100%;
+
+}
+
+
+
+.contact-title {
+
+    padding: 5px 10px;
+
+}
+
+
+
+.contact-item>input {
+
+    background: #eee;
+
+    border: solid 1px #AAAAAA;
+
+    width: 470px;
+
+}
+
+
+
+.icon_select {
+
+    /* display: none; */
+
+}
+
+
+
+.file_upload {
+
+    color: #AAAAAA;
+
+    /* ラベルテキストの色を指定する */
+
+    background-color: #eee;
+
+    /* ラベルの背景色を指定する */
+
+    padding: 20px 90px;
+
+    /* ラベルとテキスト間の余白を指定する */
+
+    border: solid 1px #AAAAAA;
+
+    /* ラベルのボーダーを指定する */
+
+}
+
+
+
+.btn-update {
+
+    margin-left: 120px;
+
+    padding: 10px 70px;
+
+}
+
+.user-avatar {
+    float: right;
+}
