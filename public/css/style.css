@@ -116,7 +116,8 @@ header {
 /* 検索ボタン位置 */
 .search-area .blue-btn {
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: -180px;
+    /* 上に30px移動 */
 }
 
 /* 投稿するとき */
@@ -146,11 +147,12 @@ header {
 
 /* アイコンの位置 */
 .form_icon {
-
     display: inline-block;
-
     margin-left: 40px;
-
+    width: 100px;
+    /* 画像の幅を指定 */
+    height: 100px;
+    /* 画像の高さを指定 */
 }
 
 /* 検索ページ */
@@ -376,15 +378,21 @@ header {
 .follow_user {
     display: flex;
     justify-content: center;
-    /* アイコンを中央に寄せる */
 
 }
 
 .follower_user {
     display: flex;
     justify-content: center;
-    /* アイコンを中央に寄せる */
 
+
+}
+
+.follower_user img {
+    width: 80px;
+    /* 幅を指定 */
+    height: 80px;
+    /* 高さを指定 */
 }
 
 .title {
@@ -394,17 +402,15 @@ header {
     margin-left: 100px;
     font-weight: 600;
     margin-top: 20px;
-    /* 5ピクセル下に移動 */
+
 }
 
 .icon-margin {
     margin: 0 70px;
 }
 
-/* search */
+
 .users-list {
-    /* margin: 0 auto; */
-    /* text-align: center; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -433,43 +439,33 @@ header {
 
 .btn-danger {
     background-color: #ED3833;
-    /* 赤い背景色を設定 */
     color: #fff;
-    /* テキストの色を白に設定 */
     border: none;
-    /* ボーダーを削除 */
     padding: 10px 20px;
-    /* パディングを設定（必要に応じて調整） */
+
     border-radius: 5px;
-    /* 角丸にする（必要に応じて調整） */
+
     cursor: pointer;
-    /* カーソルをポインターに変更（クリック可能なボタンを示す） */
 }
 
-/* ボタンのホバースタイル（マウスをボタンに重ねたときのスタイル） */
+
 .btn-danger:hover {
     background-color: #C62828;
-    /* ホバー時の背景色を変更（必要に応じて調整） */
+
 }
 
 .btn-primary {
     background-color: #00BFFF;
-    /* 赤い背景色を設定 */
     color: #fff;
-    /* テキストの色を白に設定 */
     border: none;
-    /* ボーダーを削除 */
     padding: 10px 20px;
-    /* パディングを設定（必要に応じて調整） */
     border-radius: 5px;
-    /* 角丸にする（必要に応じて調整） */
     cursor: pointer;
-    /* カーソルをポインターに変更（クリック可能なボタンを示す） */
+
 }
 
 .btn-primary:hover {
     background-color: #0000FF;
-    /* ホバー時の背景色を変更（必要に応じて調整） */
 }
 
 .search-space {
@@ -766,12 +762,26 @@ textarea {
 
 
 .user_img {
-
+    display: inline-block;
     margin-left: 40px;
+    margin-top: 20px;
+    width: 80px;
+    height: 80px;
 
 }
 
 
+.user-icon {
+    width: 100px;
+    /* 幅を指定 */
+    height: 100px;
+    /* 高さを指定 */
+}
+
+.custom_icon_size {
+    width: 50px;
+    height: 50px;
+}
 
 .post_user {
 
@@ -806,51 +816,47 @@ textarea {
 
 /* 投稿 */
 .form_text {
-
-
-
+    background-color: white;
+    white-space: pre-line;
+    max-width: 100%;
+    /* 最大幅を画面幅に合わせる */
     width: 700px;
-
+    /* 初期値は固定幅 */
     height: 100px;
-
     border: none;
-
     margin-top: 30px;
-
     margin-left: 30px;
-
-
 }
 
 
-/* topページ区切る */
+
 .post {
     border-top: 2px solid #ccc;
-    /* 2pxの太線に変更（例） */
+
 }
 
 .contents .post_text {
     flex: 1;
-    /* テキストを左端に寄せる */
+
 }
 
 .contents .content {
     text-align: right;
-    /* アイコンを右に寄せる */
+
 }
 
 .contents .content a {
     margin-left: 0px;
-    /* アイコン間の余白を設定（必要に応じて調整） */
+
 }
 
-/* その他のプロフィール */
 
 
 
 .user {
 
     margin-left: 20px;
+    margin-top: 20px;
 
 }
 
@@ -901,10 +907,12 @@ textarea {
 
 }
 
-.contact-img {
-    margin-left: 20px;
+.contact-img img {
+    width: 100px;
+    /* 幅を指定 */
+    height: 100px;
+    /* 高さを指定 */
 }
-
 
 /* ユーザープロフィール更新 */
 .contact-item {
@@ -961,19 +969,11 @@ textarea {
 
     color: #AAAAAA;
 
-    /* ラベルテキストの色を指定する */
-
     background-color: #eee;
-
-    /* ラベルの背景色を指定する */
 
     padding: 20px 90px;
 
-    /* ラベルとテキスト間の余白を指定する */
-
     border: solid 1px #AAAAAA;
-
-    /* ラベルのボーダーを指定する */
 
 }
 
@@ -981,7 +981,7 @@ textarea {
 
 .btn-update {
 
-    margin-left: 120px;
+    margin-left: 450px;
 
     padding: 10px 70px;
 
@@ -989,4 +989,14 @@ textarea {
 
 .user-avatar {
     float: right;
+    width: 100px;
+    height: 100px;
+
+}
+
+.user img {
+    width: 100px;
+    /* 幅を指定 */
+    height: 100px;
+    /* 高さを指定 */
 }

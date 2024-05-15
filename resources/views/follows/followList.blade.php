@@ -9,7 +9,7 @@
     <div class="follow_user">
       @foreach($users as $user)
       @if(Auth::user()->id != $user->id)
-      <a href="{{ route('/other-profile',[ 'id' => $user->id ])}}">
+      <a href="{{ route('other-profile', ['id' => $user->id]) }}">
         @if(Auth::user()->isFollowing($user->id))
         <img src="{{ asset($user->images) }}" alt="ユーザーアイコンです">
         @endif
@@ -27,7 +27,7 @@
         <p class="post_date">{{$post->created_at}}</p>
       </div>
       <div class="flex contents">
-        <p class="post_text">{{$post->post}}</p>
+        <p class="post_text">{!! nl2br(e($post->post)) !!}</p>
       </div>
     </div>
     @endforeach

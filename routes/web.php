@@ -36,6 +36,7 @@ Route::get('/top','PostsController@index');
 Route::post('/top','PostsController@index');
 
 // Route::post('/create','PostsController@create');
+Route::get('/other-profile/{id}','UsersController@otherProfile')->name('other-profile');
 
 
 Route::post('/create', 'PostsController@postTweet');    // <--- 追加
@@ -46,13 +47,14 @@ Route::post('/update','PostsController@update');
 Route::post('posts', 'PostsController@store');
 
 Route::get('/profile','UsersController@profile');
-  Route::get('/other-profile/{id}','UsersController@otherProfile')->name('/other-profile');
+  // Route::get('/other-profile/{id}','UsersController@otherProfile')->name('/other-profile');
   Route::get('/search','UsersController@search');
   Route::get('/searchList','UsersController@searchList');
   Route::post('/updateProfile','UsersController@updateProfile');
 
 Route::get('/followerList','FollowsController@followerList');
 Route::get('/followList','FollowsController@followList');
+
 
 
 

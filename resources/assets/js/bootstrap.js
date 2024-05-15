@@ -11,7 +11,7 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap-sass');
-} catch (e) {}
+} catch (e) { }
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -51,3 +51,17 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+document.querySelector('.container-btn').addEventListener('click', function (event) {
+    var postInput = document.querySelector('.form_text').value;
+    var validationMessage = document.querySelector('.validation-message');
+
+    if (!postInput) {
+        validationMessage.textContent = '入力が必須です';
+        event.preventDefault(); // フォームのデフォルトの動作をキャンセル
+    } else if (postInput.length > 150) {
+        validationMessage.textContent = '150文字以内で入力してください';
+        event.preventDefault(); // フォームのデフォルトの動作をキャンセル
+    } else {
+        validationMessage.textContent = ''; // エラーメッセージをクリア
+    }
+});

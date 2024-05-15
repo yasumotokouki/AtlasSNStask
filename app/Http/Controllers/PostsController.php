@@ -32,15 +32,20 @@ public function post(Request $request)
         $user_id = Auth::id();
         $post = $request->input('newPost');
 
-// フォームデータのバリデーションを行う。バリデーションが失敗した場合、エラーメッセージがセットされ、topページにリダイレクトされます。
-        $validator = $this->validator($data);
+        // バリデーションルールの定義
+        $validator = Validator::make($data, [
+            'form_text' => 'required|min:1|max:150',
+        ]);
+
+        // バリデーションが失敗した場合の処理
         if ($validator->fails()) {
             return redirect('/top')
                 ->withErrors($validator)
                 ->withInput();
         }
 
-// 新しい投稿をデータベースに作成
+        // バリデーションを通過した場合の処理
+        // 新しい投稿をデータベースに作成
         $this->create($data);
         // postsテーブルに新しい投稿を挿入
         \DB::table('posts')
@@ -54,18 +59,28 @@ public function post(Request $request)
 }
 
 
+
 public function postTweet(Request $request)
 {
 // 新しい投稿をデータベースに保存する
         $post = new Post();
 
-        $validator = $request->validate([
-            // post_tweetフィールドが必須で、文字列で、2文字以上200文字以下であることを確認
-            'post_tweet' => 'required|string|min:2|max:200',
-        ]);
-        $post->user_id = Auth::user()->id;
+            $validator = Validator::make($request->all(), [
+        'post_tweet' => 'required|string|min:1|max:150',
+    ], [
+        'post_tweet.required' => '投稿内容を入力してください',
+        'post_tweet.min' => '投稿内容は1文字以上で入力してください',
+        'post_tweet.max' => '投稿内容は150文字以内で入力してください',
+    ]);
 
-        // ユーザーが入力した投稿内容を保持
+    if ($validator->fails()) {
+        return redirect('/top')
+                    ->withErrors($validator)
+                    ->withInput();
+    }
+
+
+        $post->user_id = Auth::user()->id;
         $post->post = $request->post_tweet;
         $post->save();
         return redirect('/top')->with('message','投稿完了');

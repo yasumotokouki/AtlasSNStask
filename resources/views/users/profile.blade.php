@@ -27,7 +27,7 @@
             <!-- 名前 -->
             <div class="contact-item">
               <div class="contact-title">
-                <label for="username">user&nbsp;name</label>
+                <label for="username">ユーザー名&nbsp;</label>
               </div>
               <input type="hidden" name="id" value="{{  $users->id }}" />
               <input type="text" id="username" name="username" value="{{ $users->username }}" />
@@ -35,28 +35,28 @@
             <!-- メール -->
             <div class="contact-item">
               <div class="contact-title">
-                <label for="mail">mail&nbsp;address</label>
+                <label for="mail">メールアドレス&nbsp;</label>
               </div>
               <input type="text" id="mail" name="mail" value="{{ $users->mail }}" />
             </div>
             <!-- パスワード -->
             <div class="contact-item">
               <div class="contact-title">
-                <label for="password">password&nbsp;</label>
+                <label for="password">パスワード&nbsp;</label>
               </div>
               <input type="password" id="password" name="password" />
             </div>
             <!--パスワード確認 -->
             <div class="contact-item">
               <div class="contact-title">
-                <label for="password_confirm">password&nbsp;confirm</label>
+                <label for="password_confirm">パスワード確認&nbsp;</label>
               </div>
               <input type="password" id="password_confirm" name="password_confirmation" />
             </div>
             <!-- 自己紹介 -->
             <div class="contact-item">
               <div class="contact-title">
-                <label for="bio" class="">bio</label>
+                <label for="bio" class="">自己紹介</label>
               </div>
               <input id="bio" name="bio" value="{{ $users->bio  }}">
             </div>
@@ -66,7 +66,7 @@
 
               <div class="contact-title">
 
-                <label for="images">icon&nbsp;image</label>
+                <label for="images">アイコン画像&nbsp;</label>
 
               </div>
 

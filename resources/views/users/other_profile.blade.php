@@ -1,6 +1,9 @@
 @extends('layouts.login')
 
 @section('content')
+
+<script src="{{ asset('js/script.js') }}"></script>
+
 <div class="inner">
   <div class="inner_box">
 
@@ -48,7 +51,7 @@
         <p class="post_date">{{$post->created_at}}</p>
       </div>
       <div class=" flex contents">
-        <p class="post_text">{{$post->post}}</p>
+        <p class="post_text">{!! nl2br(e($post->post)) !!}</p>
       </div>
     </div>
     @endforeach

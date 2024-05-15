@@ -8,7 +8,8 @@
     </div>
     <div class="follower_user">
       @foreach($users as $user)
-      <a href="{{ route('/other-profile',[ 'id' => $user->id ])}}">
+      <a href="{{ route('other-profile', ['id' => $user->id]) }}">
+
         <img src="{{ asset($user->images) }}" alt="ユーザーアイコンです">
       </a>
       @endforeach
@@ -23,7 +24,7 @@
         <p class="post_date">{{$post->created_at}}</p>
       </div>
       <div class="flex contents">
-        <p class="post_text">{{$post->post}}</p>
+        <p class="post_text">{!! nl2br(e($post->post)) !!}</p>
       </div>
     </div>
     @endforeach

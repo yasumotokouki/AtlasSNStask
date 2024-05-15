@@ -76,24 +76,21 @@ class RegisterController extends Controller
     // }
 
     public function register(Request $request){
-        if($request->isMethod('post')){
-            $data = $request->input();
+    if($request->isMethod('post')){
+        $data = $request->validate([
+            'username' => 'required|string|max:255',
+            'mail' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:4|confirmed',
+        ]);
 
-            // $validator =$this->validator($data);
+        $this->create($data);
 
-            // if ($validator->fails()) {
-            //     return redirect('/register')
-            //     ->withErrors($validator)
-            //     ->withInput();
-            // }
-
-            $this->create($data);
-
-            $username = $request->input('username');
-            return redirect('added')->with('username',$username);
-        }
-        return view('auth.register');
+        $username = $request->input('username');
+        return redirect('added')->with('username',$username);
     }
+    return view('auth.register');
+}
+
 
     public function added(){
         return view('auth.added');

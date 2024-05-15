@@ -40,22 +40,23 @@ class FollowsController extends Controller
         return view('follows.followerList',compact('posts','users'));
     }
 
-    public function follow(Request $request){
-        $id = $request->input('user_id');
-        \DB::table('follows')->insert([
-            'following_id' => Auth::user()->id,
-            'followed_id'  => $id
-        ]);
+   public function follow(Request $request) {
+    $id = $request->input('user_id');
+    \DB::table('follows')->insert([
+        'following_id' => Auth::user()->id,
+        'followed_id'  => $id
+    ]);
 
-        return redirect('/search');
-    }
+    return redirect()->route('other-profile', ['id' => $id]);
+}
 
-    public function unFollow(Request $request)
-    {
-        $id = $request->input('user_id');
-        Follow::where('following_id', Auth::user()->id)->where('followed_id',$id)->delete();
+public function unFollow(Request $request) {
+    $id = $request->input('user_id');
+    Follow::where('following_id', Auth::user()->id)->where('followed_id', $id)->delete();
 
-        return redirect('/search');
-    }
+    return redirect()->route('other-profile', ['id' => $id]);
+}
+
+
 
 }
